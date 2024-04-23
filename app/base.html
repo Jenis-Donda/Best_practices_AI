@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>IntSights QRadar App Dashboard</title>
+    <!-- Added support for IE-->
+    <script type="text/javascript" src="static/polyfill.js"></script>
+    <script type="text/javascript" src="static/bluebird.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ q_get_app_base_url }}static/styles/css/all.min.css">
+    <link rel="stylesheet" href="{{ q_get_app_base_url }}static/css/all.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" src="{{ q_get_app_base_url }}static/jquery-3.7.0.min.js"></script>
+</head>
+
+<body class="nav-sm" style="background-color: #f2f4f5" data-csrf="{{ csrf_token() }}" id="main-body">
+    <div>
+        <div class="main_wrapper" id="main_wrapper">
+            <!--Navbar-->
+            <ul class="custom-ul d-flex align-items-center flex-wrap">
+                <li id="li-ioc-overview"><a href="ioc_overview">IOC Overview</a></li>
+                <li id="li-cor-overview"><a href="correlation_overview">Correlation Overview</a></li>
+                <li id="li-cor-detail"><a href="correlation_details">Correlation Details</a></li>
+                <li id="li-alert-overview"><a href="alert_overview">Alert Overview</a></li>
+                <li id="li-alert-detail"><a href="alert_details">Alert Details</a></li>
+                <li class="ms-auto" style="margin-right: 10px;"><img src="{{ q_get_app_base_url }}static/styles/logo/navBarLogo.png" alt="IntSights App Logo"></li>
+            </ul>
+            <a href="https://www.example.com">Visit Example.com</a>
+            <!--/.Navbar-->
+            <!-- Page content -->
+            {% block content %}
+            {% endblock %}
+            <!--/.Page content -->
+        </div>
+    </div>
+</body>
+</html>
